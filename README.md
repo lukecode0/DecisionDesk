@@ -1,24 +1,49 @@
-# README
+# DecisionDesk
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+DecisionDesk is a Rails application for guided intake, branching screening, and administrator review. It walks an applicant through a conditional questionnaire, produces a recommendation, and stores submissions for searchable dashboard review.
 
-Things you may want to cover:
+## Stack
 
-* Ruby version
+- Ruby on Rails
+- ERB server-rendered pages
+- JSON endpoints for the live screening interface
+- File-backed persistence for easy local resets and repeatable walkthroughs
 
-* System dependencies
+## Local Setup
 
-* Configuration
+From the project root:
 
-* Database creation
+```bash
+bundle install
+bin/rails db:prepare
+bin/rails db:seed
+bin/dev
+```
 
-* Database initialization
+If you are not using the development Procfile flow, you can also run:
 
-* How to run the test suite
+```bash
+bin/rails server
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Main Screens
 
-* Deployment instructions
+- `/` for the overview page
+- `/app` for the interactive screening and dashboard experience
+- `/api/health` for a basic health check
 
-* ...
+## What The App Demonstrates
+
+- Branching eligibility-style screening
+- Clear recommendation outcomes with readable decision paths
+- Searchable administrator dashboard
+- Resettable sample data for repeatable walkthroughs
+- Rails controllers and service objects separated from the UI layer
+
+## Testing
+
+Run the test suite with:
+
+```bash
+bin/rails test
+```

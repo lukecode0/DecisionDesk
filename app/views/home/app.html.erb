@@ -1,4 +1,4 @@
-<% content_for :page_title, "DecisionDesk Demo App" %>
+<% content_for :page_title, "DecisionDesk Application" %>
 <% content_for :page_scripts do %>
   <script src="/decisiondesk_app.js" defer></script>
 <% end %>
@@ -6,18 +6,18 @@
 <section class="container app-layout">
   <aside class="card app-sidebar">
     <div class="sidebar-section">
-      <div class="eyebrow">Demo Controls</div>
+      <div class="eyebrow">Application Controls</div>
       <h2>Explore the app</h2>
-      <p class="muted">This portfolio demo runs against Rails JSON endpoints with persistent submissions, a branching screening flow, and an admin dashboard for review.</p>
+      <p class="muted">DecisionDesk runs against Rails JSON endpoints with persistent submissions, a branching screening flow, and an administrator dashboard for review.</p>
     </div>
     <div class="sidebar-actions">
       <button id="showWizardButton" class="button" type="button">Begin Screening</button>
       <button id="showDashboardButton" class="button button-ghost" type="button">View Dashboard</button>
-      <button id="resetDemoButton" class="button button-ghost" type="button">Reset Demo Data</button>
+      <button id="resetDemoButton" class="button button-ghost" type="button">Reset Sample Data</button>
     </div>
     <div class="sidebar-section note-box">
       <h3>What the reset does</h3>
-      <p>Reset Demo Data restores the seeded submissions in the backend store and removes any entries created during testing, so you can reuse the demo endlessly.</p>
+      <p>Reset Sample Data restores the initial submission set in the backend store and removes any entries created during testing, so the application can be reused from a clean baseline.</p>
     </div>
   </aside>
 
@@ -27,10 +27,10 @@
     <section id="welcomeView" class="card screen active-view">
       <div class="eyebrow">Eligibility screening</div>
       <h1>Screen applicants through a clear, adaptive intake flow.</h1>
-      <p class="lead compact">DecisionDesk guides a user through a branching questionnaire, recommends an outcome, and stores the submission for admin review. The current rules cover small businesses, nonprofits, and individuals.</p>
+      <p class="lead compact">DecisionDesk guides a user through a branching questionnaire, recommends an outcome, and stores the submission for administrator review. The current rules cover small businesses, nonprofits, and individuals.</p>
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="stat-label">Seeded submissions</div>
+          <div class="stat-label">Sample submissions</div>
           <div class="stat-value" id="seededCount">0</div>
         </div>
         <div class="stat-card">
@@ -82,7 +82,7 @@
       <div class="screen-header wrap-on-mobile">
         <div>
           <div class="eyebrow">Admin dashboard</div>
-          <h2>Search and review demo submissions</h2>
+          <h2>Search and review submissions</h2>
         </div>
         <div class="toolbar">
           <input id="searchInput" class="input compact-input" type="search" placeholder="Search by name or email" />

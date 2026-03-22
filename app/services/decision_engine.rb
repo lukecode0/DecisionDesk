@@ -44,7 +44,7 @@ module DecisionEngine
       annualRevenue: {
         id: 'annualRevenue',
         title: 'What is the annual revenue range?',
-        help: 'A simple revenue band is enough for this demo to route the request intelligently.',
+        help: 'A simple revenue band is enough to route the request intelligently.',
         fields: [
           { id: 'annualRevenue', label: 'Annual revenue', type: 'radio', options: [
             { value: 'lt50', label: 'Under $50k' },
@@ -78,7 +78,7 @@ module DecisionEngine
       npYearsActive: {
         id: 'npYearsActive',
         title: 'How long has the nonprofit been active?',
-        help: 'This branch demonstrates a distinct eligibility path for nonprofits.',
+        help: 'This branch follows a distinct eligibility path for nonprofits.',
         fields: [
           { id: 'npYearsActive', label: 'Years active', type: 'radio', options: [
             { value: 'lt1', label: 'Less than 1 year' },
@@ -90,7 +90,7 @@ module DecisionEngine
       servesYouth: {
         id: 'servesYouth',
         title: 'Does the organization primarily serve youth?',
-        help: 'The seeded rules prioritize youth-serving nonprofits for one of the available outcomes.',
+        help: 'Current rules prioritize youth-serving nonprofits for one of the available outcomes.',
         fields: [
           { id: 'servesYouth', label: 'Serves youth', type: 'radio', options: [
             { value: 'yes', label: 'Yes' },
@@ -101,7 +101,7 @@ module DecisionEngine
       householdIncome: {
         id: 'householdIncome',
         title: 'What best describes household income?',
-        help: 'Income is often central to eligibility decisions and provides a useful branching example for the portfolio demo.',
+        help: 'Income is often central to eligibility decisions and helps drive a useful branching recommendation path.',
         fields: [
           { id: 'householdIncome', label: 'Household income', type: 'radio', options: [
             { value: 'low', label: 'Lower income' },

@@ -93,7 +93,7 @@ async function refreshSubmissions() {
 async function resetDemoData() {
   await fetchJSON('/api/reset', { method: 'POST' });
   await refreshSubmissions();
-  showFlash('Demo data reset. Seeded submissions restored.');
+  showFlash('Sample data reset. Initial submissions restored.');
   showView('welcomeView');
 }
 
@@ -352,6 +352,6 @@ function escapeHTML(value) {
 bootstrap().catch(error => {
   console.error(error);
   const flash = document.getElementById('flash');
-  flash.textContent = 'The demo could not load. Check the server and try again.';
+  flash.textContent = 'The application could not load. Check the server and try again.';
   flash.classList.remove('hidden');
 });
