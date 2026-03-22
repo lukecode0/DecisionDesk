@@ -1,0 +1,143 @@
+<% content_for :page_title, "DecisionDesk Demo App" %>
+<% content_for :page_scripts do %>
+  <script src="/decisiondesk_app.js" defer></script>
+<% end %>
+
+<section class="container app-layout">
+  <aside class="card app-sidebar">
+    <div class="sidebar-section">
+      <div class="eyebrow">Demo Controls</div>
+      <h2>Explore the app</h2>
+      <p class="muted">This portfolio demo runs against Rails JSON endpoints with persistent submissions, a branching screening flow, and an admin dashboard for review.</p>
+    </div>
+    <div class="sidebar-actions">
+      <button id="showWizardButton" class="button" type="button">Begin Screening</button>
+      <button id="showDashboardButton" class="button button-ghost" type="button">View Dashboard</button>
+      <button id="resetDemoButton" class="button button-ghost" type="button">Reset Demo Data</button>
+    </div>
+    <div class="sidebar-section note-box">
+      <h3>What the reset does</h3>
+      <p>Reset Demo Data restores the seeded submissions in the backend store and removes any entries created during testing, so you can reuse the demo endlessly.</p>
+    </div>
+  </aside>
+
+  <section class="app-main">
+    <div id="flash" class="flash hidden"></div>
+
+    <section id="welcomeView" class="card screen active-view">
+      <div class="eyebrow">Eligibility screening</div>
+      <h1>Screen applicants through a clear, adaptive intake flow.</h1>
+      <p class="lead compact">DecisionDesk guides a user through a branching questionnaire, recommends an outcome, and stores the submission for admin review. The current rules cover small businesses, nonprofits, and individuals.</p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Seeded submissions</div>
+          <div class="stat-value" id="seededCount">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Outcome types</div>
+          <div class="stat-value" id="outcomeCount">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Question branches</div>
+          <div class="stat-value" id="branchCount">0</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="wizardView" class="card screen hidden">
+      <div class="screen-header">
+        <div>
+          <div class="eyebrow">Applicant screening</div>
+          <h2 id="wizardTitle">Tell us about this request</h2>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+          <div class="muted" id="progressText">Step 1</div>
+        </div>
+      </div>
+      <form id="wizardForm">
+        <div id="questionContainer"></div>
+        <div class="wizard-actions">
+          <button id="prevButton" class="button button-ghost" type="button">Back</button>
+          <button id="nextButton" class="button" type="submit">Next</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="resultView" class="card screen hidden">
+      <div class="eyebrow">Recommended outcome</div>
+      <h2 id="resultOutcome">Outcome</h2>
+      <p id="resultReason" class="lead compact"></p>
+      <div class="card inset-card">
+        <h3>Decision path</h3>
+        <ol id="resultPath" class="path-list"></ol>
+      </div>
+      <div class="wizard-actions">
+        <button id="saveAnotherButton" class="button" type="button">Start Another Screening</button>
+        <button id="viewSubmissionButton" class="button button-ghost" type="button">Open Dashboard</button>
+      </div>
+    </section>
+
+    <section id="dashboardView" class="card screen hidden">
+      <div class="screen-header wrap-on-mobile">
+        <div>
+          <div class="eyebrow">Admin dashboard</div>
+          <h2>Search and review demo submissions</h2>
+        </div>
+        <div class="toolbar">
+          <input id="searchInput" class="input compact-input" type="search" placeholder="Search by name or email" />
+          <select id="outcomeFilter" class="input compact-input">
+            <option value="">All outcomes</option>
+          </select>
+          <select id="statusFilter" class="input compact-input">
+            <option value="">All statuses</option>
+            <option value="Eligible">Eligible</option>
+            <option value="Review">Review</option>
+            <option value="Referral">Referral</option>
+          </select>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Applicant</th>
+              <th>Type</th>
+              <th>Outcome</th>
+              <th>Status</th>
+              <th>Created</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="submissionTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="detailView" class="card screen hidden">
+      <div class="screen-header wrap-on-mobile">
+        <div>
+          <div class="eyebrow">Submission detail</div>
+          <h2 id="detailName">Applicant</h2>
+          <p id="detailMeta" class="muted"></p>
+        </div>
+        <button id="backToDashboardButton" class="button button-ghost" type="button">Back to Dashboard</button>
+      </div>
+      <div class="detail-grid">
+        <div class="card inset-card">
+          <h3>Outcome</h3>
+          <p id="detailOutcome" class="detail-highlight"></p>
+          <p id="detailReason"></p>
+        </div>
+        <div class="card inset-card">
+          <h3>Decision path</h3>
+          <ol id="detailPath" class="path-list"></ol>
+        </div>
+      </div>
+      <div class="card inset-card">
+        <h3>Submitted answers</h3>
+        <div id="detailAnswers" class="answers-grid"></div>
+      </div>
+    </section>
+  </section>
+</section>

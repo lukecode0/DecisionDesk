@@ -1,0 +1,120 @@
+[
+  {
+    "id": 1,
+    "applicantName": "Jordan Lee",
+    "applicantEmail": "jordan@northstar.com",
+    "entityType": "small_business",
+    "yearsActive": "gt2",
+    "annualRevenue": "gt250",
+    "urgentNeed": "yes",
+    "county": "metro",
+    "outcome": "Growth Line Fast-Track",
+    "status": "Eligible",
+    "reason": "Established business with stronger revenue and an urgent request matched the fast-track route.",
+    "decisionPath": [
+      "Small business selected",
+      "Operating more than 2 years",
+      "Revenue above $250k",
+      "Urgent request flagged",
+      "Metro routing available"
+    ],
+    "createdAt": "2026-03-14 09:10"
+  },
+  {
+    "id": 2,
+    "applicantName": "Avery Patel",
+    "applicantEmail": "avery@seedling.io",
+    "entityType": "small_business",
+    "yearsActive": "lt1",
+    "annualRevenue": "lt50",
+    "urgentNeed": "no",
+    "county": "rural",
+    "outcome": "Foundational Review",
+    "status": "Review",
+    "reason": "Newer business with lighter revenue is best routed to a guided review before a final recommendation.",
+    "decisionPath": [
+      "Small business selected",
+      "Operating less than 1 year",
+      "Revenue under $50k",
+      "Not urgent",
+      "Rural routing"
+    ],
+    "createdAt": "2026-03-15 11:35"
+  },
+  {
+    "id": 3,
+    "applicantName": "Harbor Youth Collective",
+    "applicantEmail": "ops@harboryouth.org",
+    "entityType": "nonprofit",
+    "npYearsActive": "gt3",
+    "servesYouth": "yes",
+    "county": "metro",
+    "outcome": "Community Priority Review",
+    "status": "Eligible",
+    "reason": "Youth-serving nonprofit with operating history qualified for the priority community review path.",
+    "decisionPath": [
+      "Nonprofit selected",
+      "Operating more than 3 years",
+      "Youth-serving mission confirmed",
+      "Metro routing available"
+    ],
+    "createdAt": "2026-03-15 16:00"
+  },
+  {
+    "id": 4,
+    "applicantName": "Morgan Alvarez",
+    "applicantEmail": "morgan@personalmail.com",
+    "entityType": "individual",
+    "householdIncome": "low",
+    "veteran": "no",
+    "county": "metro",
+    "outcome": "Priority Intake",
+    "status": "Referral",
+    "reason": "Lower-income individual was routed to the priority intake path for quicker review.",
+    "decisionPath": [
+      "Individual selected",
+      "Lower-income household indicated",
+      "No veteran flag",
+      "Metro routing available"
+    ],
+    "createdAt": "2026-03-16 08:20"
+  },
+  {
+    "id": 5,
+    "applicantName": "Rural Family Support Network",
+    "applicantEmail": "contact@rfsn.org",
+    "entityType": "nonprofit",
+    "npYearsActive": "1to3",
+    "servesYouth": "no",
+    "county": "rural",
+    "outcome": "General Program Review",
+    "status": "Review",
+    "reason": "Nonprofit request was routed to the general review queue for broader program matching.",
+    "decisionPath": [
+      "Nonprofit selected",
+      "Operating 1 to 3 years",
+      "Not primarily youth-serving",
+      "Rural routing"
+    ],
+    "createdAt": "2026-03-16 13:40"
+  },
+  {
+    "id": 6,
+    "applicantName": "Taylor Brooks",
+    "applicantEmail": "taylor@inbox.com",
+    "entityType": "individual",
+    "householdIncome": "mid",
+    "veteran": "yes",
+    "county": "rural",
+    "outcome": "Veteran Services Referral",
+    "status": "Referral",
+    "reason": "Veteran indicator triggered a referral recommendation tailored to that support track.",
+    "decisionPath": [
+      "Individual selected",
+      "Middle-income household indicated",
+      "Veteran flag confirmed",
+      "Rural routing"
+    ],
+    "createdAt": "2026-03-17 10:05"
+  }
+]

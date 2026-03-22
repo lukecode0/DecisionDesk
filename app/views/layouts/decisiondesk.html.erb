@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= content_for?(:page_title) ? yield(:page_title) : "DecisionDesk" %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/decisiondesk.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar container">
+      <a class="brand" href="/">
+        <span class="brand-mark">D</span>
+        <span>DecisionDesk</span>
+      </a>
+      <nav class="nav">
+        <% if request.path == '/' %>
+          <a href="#features">Features</a>
+          <a href="#architecture">Architecture</a>
+          <a href="/app" class="button button-small button-ghost">Open Demo</a>
+        <% else %>
+          <a href="/">Project Home</a>
+        <% end %>
+      </nav>
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
+  </div>
+  <%= yield :page_scripts if content_for?(:page_scripts) %>
+</body>
+</html>
