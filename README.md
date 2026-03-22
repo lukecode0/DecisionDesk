@@ -7,7 +7,7 @@ DecisionDesk is a Rails application for guided intake, branching screening, and 
 - Ruby on Rails
 - ERB server-rendered pages
 - JSON endpoints for the live screening interface
-- File-backed persistence for easy local resets and repeatable walkthroughs
+- A SQL database for application persistence, with a lightweight fallback available for local resilience
 
 ## Local Setup
 
